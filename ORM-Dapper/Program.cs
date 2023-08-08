@@ -24,7 +24,7 @@ class Program
 
         repo.InsertDepartment(newDepartment);
 
-        var departmentRepo = new DapperDepartmentRepository(conn);
+        //var departmentRepo = new DapperDepartmentRepository(conn);
 
         //var departments = departmentRepo.GetALLDepartments();
 
@@ -32,12 +32,14 @@ class Program
 
         foreach (var department in departments) 
         {
-        
-            Console.WriteLine(department.DepartmentID);
-            Console.WriteLine(department.Name);
-            Console.WriteLine();
-            Console.WriteLine();
-        
+
+            Console.WriteLine($"{department.DepartmentID} {department.Name}");
+
+            //Console.WriteLine(department.DepartmentID);
+            //Console.WriteLine(department.Name);
+            //Console.WriteLine();
+            //Console.WriteLine();
+
         }
     }
 }

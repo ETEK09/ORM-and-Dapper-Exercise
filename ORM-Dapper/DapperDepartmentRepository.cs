@@ -18,20 +18,16 @@ namespace ORM_Dapper
         {
             _connection = connection;
         }
-    
+   
 
-    public IEnumerable<Department> GetAllDepartments()
+        public IEnumerable<Department> GetALLDepartments()
         {
             return _connection.Query<Department>("SELECT * FROM Departments;").ToList();
         }
 
-        public IEnumerable<Department> GetALLDepartments()
-        {
-            throw new NotImplementedException();
-        }
-
         public void InsertDepartment(string newDepartmentName)
         {
+            
             _connection.Execute("INSERT INTO DEPARTMENTS (Name) VALUES (@departmentName);",
              new { departmentName = newDepartmentName });
         }
